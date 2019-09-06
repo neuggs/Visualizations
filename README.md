@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+## Frank Neugebauer's Visualizations 
 
-You can use the [editor on GitHub](https://github.com/neuggs/Visualizations/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Visualizations are a critical element of data science, without which the complexities are difficult to articulate, especially for those who are less interested in data science. There are many types of visualizations and it's important to understand what they are and how they're used. More subtly, the same visualization can be very different depending on the tool used to render it.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**This project uses:**
+1. Python
+2. R (RStudio)
+3. Tableau
+4. Power BI
 
-### Markdown
+It's worth noting that part of the project using R and Python _within_ Power BI, which is an interesting mixture of tooling.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Type of Visualizations
 
-```markdown
-Syntax highlighted code block
+- Bar chart
+- Line chart
+- Stacked bar chart
+- Area chart
+- Step chart
+- Tree map
+- Density chart
+- Scatter plot
+- Bubble chart
+- Word cloud
+- Sparkline
+- Heatmap
+- Contour chart
+- Spatial chart
+- Boxplot
+- Bullet chart
+- Histogram
 
-# Header 1
-## Header 2
-### Header 3
+I did not include donut charts because I'm opposed to a pie chart with a circle in the middle. For that matter, I'm opposed to pie charts.
 
-- Bulleted
-- List
+## NOTICE
+It's important to understand that the visualizations and the code are separate, which means you have to download or fork the entire repository for any of this to work.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/neuggs/Visualizations/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
