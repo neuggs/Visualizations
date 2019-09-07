@@ -1,0 +1,67 @@
+---
+title: "Tree, Area, Stacked Area, Step"
+author: "Frank Neugebauer"
+date: "6/27/2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.height=5, fig.width=7)
+```
+
+## Tree Maps, Area Charts, Stacked Area Charts, & Step Charts
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(treemap)
+```
+
+## Load the Data
+
+```{r}
+expenditures <- read.csv('./ex2-2/expenditures.txt', sep='\t')
+unemployment <- read.csv('./ex2-2/unemployement-rate-1948-2010.csv')
+postage <- read_xlsx('./ex2-2/us-postage.xlsm')
+population <- read_xlsx('./ex2-2/world-population.xlsm')
+```
+
+## Tree Map
+A very cool visualization and not hard to put together. Especially good at quantifying categorical data.
+
+```{r}
+treemap(expenditures, 
+        index=c("category"),
+        vSize = "expenditure",  
+        type="index", 
+        palette = "Greens",  
+        title="Expenditures Tree Map", 
+        fontsize.title = 14)
+```
+
+## Area Chart
+Pretty simple in R
+```{r}
+plot <- ggplot(postage, aes(x=Year, y=Price), fill=Price) +
+  geom_area(fill='red') + theme_bw() + ggtitle('Postage Price 1991-2010')
+print(plot)
+```
+
+## Stacked Area Chart
+Unlike Tableau, I like the default ordering for the stacked area chart using the same expenditure data.
+
+```{r}
+plot <- ggplot(expenditures, aes(x=year, y=expenditure, fill=category)) +
+  geom_area() + ggtitle('Expenditures Stacked Area Chart')
+print(plot)
+```
+
+## Step Chart
+Very straightforward using R.
+
+```{r}
+plot(unemployment$Year, unemployment$Value, type='s', col='red', xlab='Year', 
+     ylab='Unemployment %', main="Unemployment by Year 1948-2010")
+```

@@ -1,0 +1,49 @@
+"0","install.packages(""webshot"")
+"
+"1","Error in "
+"1",""
+"1","install.packages"
+"1",""
+"1"," : "
+"1",""
+"1","Updating loaded packages"
+"1",""
+"1","
+"
+"0","webshot::install_phantomjs()"
+"2","trying URL 'https://github.com/wch/webshot/releases/download/v0.3.1/phantomjs-2.1.1-windows.zip'
+"
+"2","Content type 'application/octet-stream'"
+"2"," length 18193653 bytes (17.4 MB)
+"
+"2","downloaded 17.4 MB
+
+"
+"2","phantomjs has been installed to C:\Users\neugg\AppData\Roaming\PhantomJS
+"
+"0","install.packages(""webshot"")"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","Installing package into ‘C:/Users/neugg/OneDrive/Documents/R/win-library/3.6’
+(as ‘lib’ is unspecified)
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/webshot_0.5.1.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 141668 bytes (138 KB)
+"
+"2","downloaded 138 KB
+
+"
+"1","package â€˜webshotâ€™ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1",""
+"1","The downloaded binary packages are in
+	C:\Users\neugg\AppData\Local\Temp\RtmpW43dqW\downloaded_packages"
+"1",""
+"1","
+"

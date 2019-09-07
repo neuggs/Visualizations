@@ -1,0 +1,67 @@
+---
+title: "R Charts - Line, Bar, Stacked Bar"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+#install.packages("webshot")
+#webshot::install_phantomjs()
+```
+
+## Charts, Charts, and More Charts
+Get the data.
+
+```{r cars}
+postage_xl <- read_xlsx('../data/us-postage.xlsm')
+obama_xl <- read_xls('../data/obama-approval-ratings.xls')
+hotdog_winners <- read_xlsx('../data/hotdog-contest-winners.xlsm')
+```
+
+## Line Chart
+Pretty simple, using ggplot.
+
+```{r}
+line_base <- ggplot(data=postage_xl, aes(x=Year, y=Price)) 
+line <- line_base + geom_line() + geom_point()
+print(line)
+```
+
+## Bar Chart
+
+```{r}
+plot <- ggplot(obama_xl, aes(Issue, Approve))
+plot + geom_bar(stat = 'identity', aes(fill=Issue), position='dodge') +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+## Stacked Bar
+Was more difficult to get multiple values (as columns) to stack, but plotly made is very simple.
+
+```{r}
+plot_ly(obama_xl, x=~Issue, y=~Approve, type='bar', name='Approve') %>%
+  add_trace(y=~Disapprove, name='Disapprove') %>%
+  add_trace(y=~None, name='None') %>%
+  layout(yaxis = list(title='Score'), barmode='stack')
+```
+
+The last piece of code generated the stacked bar chart, but plotly produces HTML. To make the output easy to read, I kept it in Word and simply added the image after the fact.
+
+## Pie Chart
+This was hard in ggplot, but very simple using the base R library.
+
+```{r}
+winners_by_ctry <- hotdog_winners %>% group_by(hotdog_winners$Country) %>% tally()
+slices <- winners_by_ctry$n
+labels <- winners_by_ctry$`hotdog_winners$Country`
+pct <- round(winners_by_ctry$n / sum(winners_by_ctry$n) * 100)
+labels <- paste(labels, pct)
+labels <- paste(labels, '%', sep='')
+pie(slices, labels = labels, col=rainbow(length(labels)), main='Hot Dog Winners by Country')
+```
