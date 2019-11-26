@@ -2,7 +2,9 @@
 
 Visualizations are a critical element of data science, without which the complexities are difficult to articulate, especially for those who are less interested in data science. There are many types of visualizations and it's important to understand what they are and how they're used. More subtly, the same visualization can be very different depending on the tool used to render it.
 
-**This project uses:**
+## Requirements
+You'll need to have the following tools installed if you want to re-create all the visualizations (or any sub-part for tool-specific visualizations):
+
 1. Python
 2. R (RStudio)
 3. Tableau
@@ -32,8 +34,8 @@ It's worth noting that part of the project using R and Python _within_ Power BI,
 
 I did not include donut charts because I'm opposed to a pie chart with a circle in the middle. For that matter, I'm opposed to pie charts.
 
-## NOTICE
-It's important to understand that the visualizations and the code are separate, which means you have to download or fork the entire repository for any of this to work.
+## To Use
+It's important to understand that the visualizations and the code are separate, which means you have to download or fork the entire repository for any of this to work. Running the code is tool-specific; for example, you'll need Python for the Python visualizations, along with any packages I import (see the code for specific packages).
 
 
 
